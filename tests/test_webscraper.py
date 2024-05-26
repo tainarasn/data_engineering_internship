@@ -2,7 +2,7 @@
 
 import os
 import unittest
-from src.modules.webscraper import WebScraper
+from src.models.webscraper import WebScraper
 
 class TestScraper(unittest.TestCase):
     def setUp(self):
