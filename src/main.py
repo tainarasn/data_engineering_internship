@@ -1,12 +1,11 @@
-from modules.module1 import Car
-from modules.module2 import EletricCar
+from modules.webscraper import WebScraper
+import os
 
-def main():
-    my_car = Car("Toyota", "Corolla", 2020)
-    print(my_car.display_info())
+if __name__ ==  "__main__":
+    #Base URL
+    url = 'https://www.ibge.gov.br/estatisticas/downloads-estatisticas.html'
+    download_dir = os.path.join(os.getcwd(), 'downloads') #directory downloads
 
-    my_eletric_car = EletricCar("Tesla", "Model S",2021,100)
-    print(my_eletric_car.display_info())
-
-if __name__== "__main__":
-    main()
+    #Initialize the scraper and get started 
+    scraper = WebScraper(url, download_dir)
+    scraper.start()
