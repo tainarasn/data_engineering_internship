@@ -74,18 +74,20 @@ class WebScraper:
             if not os.path.exists(csv_dir):
                 os.makedirs(csv_dir)
 
-            # Carregar o arquivo XLSX
+           
+            # Upload the XLSX file
             xls = pd.ExcelFile(xlsx_file)
 
-            # Iterar sobre as planilhas no arquivo XLSX
+            
+            # Iterate over the sheets in the XLSX file
             for sheet_name in xls.sheet_names:
-                # Ler a planilha como DataFrame
+                #Read spreadsheet as DataFrame
                 df = pd.read_excel(xls, sheet_name=sheet_name)
 
-                # Nome do arquivo CSV
+                #CSV file name
                 csv_file = os.path.join(csv_dir, f"{sheet_name}.csv")
 
-                # Salvar o DataFrame como CSV
+                #Save the DataFrame as CSV
                 df.to_csv(csv_file, index=False)
                 print(f"Convertido: {sheet_name} para {csv_file}")
         except Exception as e:
