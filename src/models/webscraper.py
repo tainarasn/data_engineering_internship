@@ -65,34 +65,6 @@ class WebScraper:
             time.sleep(5)
         except Exception as e:
             print(f"Erro ao tentar navegar para a pasta: {folder_id}, {e}")
-
-
-    # def convert_xlsx(self, xlsx_file, csv_file,filename):
-    #     try:
-    #         base_dir = self.download_dir
-    #         csv_dir = os.path.join(base_dir,'converted', filename)
-    #         if not os.path.exists(csv_dir):
-    #             os.makedirs(csv_dir)
-
-           
-    #         # Upload the XLSX file
-    #         xls = pd.ExcelFile(xlsx_file)
-
-            
-    #         # Iterate over the sheets in the XLSX file
-    #         for sheet_name in xls.sheet_names:
-    #             #Read spreadsheet as DataFrame
-    #             df = pd.read_excel(xls, sheet_name=sheet_name)
-
-    #             #CSV file name
-    #             csv_file = os.path.join(csv_dir, f"{sheet_name}.csv")
-
-    #             #Save the DataFrame as CSV
-    #             df.to_csv(csv_file, index=False)
-    #             print(f"Convertido: {sheet_name} para {csv_file}")
-    #     except Exception as e:
-    #         print(f"Erro ao converter arquivo: {e}")
-            
             
     def download_files(self, download_links):
         try:

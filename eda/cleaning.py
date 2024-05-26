@@ -2,33 +2,33 @@ import os
 import pandas as pd
 from matplotlib import pyplot
 
-# Diretório onde estão os arquivos CSV convertidos
+#Directory where the converted CSV files are located
 converted_dir = '../data/converted'
 subdirectories = [os.path.join(converted_dir, d) for d in os.listdir(converted_dir) if os.path.isdir(os.path.join(converted_dir, d))]
 
 for subdir in subdirectories:
     print(f"Processando arquivos em {subdir}")
     
-    # Lista todos os arquivos no subdiretório
+    #List all files in the subdirectory
     files = os.listdir(subdir)
     
-    # Itera sobre cada arquivo no subdiretório
+    #Iterates over each file in the subdirectory
     for file in files:
-        if file.endswith('.csv') and not file.startswith('Tab'):  # Ignora arquivos que não começam com 'Tab'
+        if file.endswith('.csv') and not file.startswith('Tab'):  
             print(f"Ignorando arquivo: {file}")
-            continue  # Pula para o próximo arquivo sem processar
+            continue  #Skip to next file without processing
         
         csv_path = os.path.join(subdir, file)
         print(f"Processando arquivo: {csv_path}")
 
-        # Lê o arquivo CSV como DataFrame
+        #Read CSV file as DataFrame
         df = pd.read_csv(csv_path)
 
-        # Realiza as operações de limpeza
+        #Performs cleaning operations
         df.dropna(inplace=True)
         df.drop_duplicates(inplace=True)
 
-        # Salva o DataFrame limpo de volta como CSV (substitui o arquivo original)
+        #Saves the cleaned DataFrame back as CSV (overwrites the original file)
         df.to_csv(csv_path, index=False)
 
         print(f"Arquivo {csv_path} processado e salvo.")
