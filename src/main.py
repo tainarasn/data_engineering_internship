@@ -1,4 +1,5 @@
 from models.webscraper import WebScraper
+
 import os
 
 if __name__ ==  "__main__":
@@ -10,3 +11,5 @@ if __name__ ==  "__main__":
     #Initialize the scraper and get started 
     scraper = WebScraper(url, download_dir)
     scraper.start()
+    
+    
