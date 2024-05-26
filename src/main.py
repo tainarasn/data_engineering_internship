@@ -1,11 +1,8 @@
-from eda.models.webscraper import WebScraper
-from eda.convert_xlsx import convert_xlsx
+from models.webscraper import WebScraper
 import os
-import sys
 
 if __name__ ==  "__main__":
 
-    sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname("../eda"))))
     #Base URL
     url = 'https://www.ibge.gov.br/estatisticas/downloads-estatisticas.html'
     download_dir = os.path.join(os.getcwd(), 'data') #directory downloads
