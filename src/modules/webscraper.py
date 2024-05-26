@@ -6,6 +6,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException
 import os
 import time
+import pandas
 
 class WebScraper:
     
@@ -75,6 +76,11 @@ class WebScraper:
         except Exception as e:
             print(f"Erro ao tentar baixar os arquivos: {e}")
 
+
+    # def to_csv(self, xlsx_file, csv_file):
+    #     # try:
+            
+    #     # except:
     #operating flow
     def start(self):
         try:
