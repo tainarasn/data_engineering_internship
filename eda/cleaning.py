@@ -1,6 +1,7 @@
 import os
 import pandas as pd
-from matplotlib import pyplot
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 #Directory where the converted CSV files are located
 converted_dir = '../data/converted'
@@ -14,7 +15,7 @@ for subdir in subdirectories:
     
     #Iterates over each file in the subdirectory
     for file in files:
-        if file.endswith('.csv') and not file.startswith('Tab'):  
+        if not file.endswith('.csv') and not file.startswith('Tab'):  
             print(f"Ignorando arquivo: {file}")
             continue  #Skip to next file without processing
         

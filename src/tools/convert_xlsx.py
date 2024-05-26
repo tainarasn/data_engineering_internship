@@ -10,13 +10,13 @@ def convert_xlsx(download_dir, xlsx_file, csv_file,filename):
 
     
         # Upload the XLSX file
-        xls = pd.ExcelFile(xlsx_file)
+        xlsx = pd.ExcelFile(xlsx_file)
 
 
         # Iterate over the sheets in the XLSX file
-        for sheet_name in xls.sheet_names:
+        for sheet_name in xlsx.sheet_names:
             #Read spreadsheet as DataFrame
-            df = pd.read_excel(xls, sheet_name=sheet_name)
+            df = pd.read_excel(xlsx, sheet_name=sheet_name)
 
             #CSV file name
             csv_file = os.path.join(csv_dir, f"{sheet_name}.csv")
